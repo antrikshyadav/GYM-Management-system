@@ -353,7 +353,7 @@ const LandingPage = () => {
                 QUEST DIGIFLEX
               </Typography>
               <Typography sx={{ mb: 2 }}>
-                8464 Columbus Ave, New York
+                skyee ,indore
               </Typography>
               <Box sx={{ display: "flex", gap: 2 }}>
                 <IconButton size="small" sx={{ color: "#FFD700" }}>
