@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import backgroundImage from './background-image.jpg';
+import trainer from './trainer.jpg'
 import {
   AppBar,
   Box,
@@ -19,8 +21,8 @@ import {
   Facebook,
   Instagram,
   LinkedIn,
-  LocationOn,
-  Menu as MenuIcon,
+  // LocationOn,
+  // Menu as MenuIcon,
   Phone,
   Twitter,
 } from "@mui/icons-material";
@@ -72,11 +74,17 @@ const LandingPage = () => {
       {/* Hero Section */}
       <Box
         sx={{
+          width: '100%',
+        height: '300px', // Set height as needed\
+        opacity:0.6,
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
           height: "100vh",
           display: "flex",
           alignItems: "center",
-          background: "logo1.jpeg",
-          backgroundSize: "cover",
+          // background: "logo1.jpeg",
+          // backgroundSize: "cover",
           backgroundPosition: "center",
           position: "relative",
           "&::before": {
@@ -86,7 +94,7 @@ const LandingPage = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            bgcolor: "rgba(0,0,0,0.6)",
+            // bgcolor: "rgba(0,0,0,0.6)",
           },
         }}
       >
@@ -157,14 +165,17 @@ const LandingPage = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Box
-                component="img"
-                src="/placeholder.svg?height=400&width=600"
-                alt="Personal Training"
-                sx={{
-                  width: "100%",
-                  height: "auto",
-                  borderRadius: 2,
-                }}
+              
+              component="img"
+              src={trainer} // Update this path based on your imported image
+              
+              alt="Personal Training"
+              sx={{
+                width: "100%",
+                height: "auto",
+                opacity:0.4,
+                borderRadius: 2,
+              }}
               />
             </Grid>
           </Grid>
