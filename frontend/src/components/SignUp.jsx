@@ -26,7 +26,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/signup", {
+      const response = await axios.post("http://localhost:8080/create", {
         role,
         name,
         email,
@@ -155,11 +155,11 @@ const SignUp = () => {
               required
               InputProps={{
                 startAdornment: (
-                  <Person style={{ color: "#A9A9A9", marginRight: "8px" }} />
+                  <Person style={{ color: "white", marginRight: "8px" }} />
                 ),
               }}
               InputLabelProps={{
-                style: { color: "#A9A9A9" },
+                style: { color: "#white" },
               }}
               style={{
                 backgroundColor: "rgba(0,0,0,0.5)",
