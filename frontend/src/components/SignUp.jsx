@@ -32,14 +32,21 @@ const SignUp = () => {
         email,
         password,
       });
-      if (response.data.success) {
+      // if (response.data.success) {
+      //   alert("Signup successful");
+      //   navigate("/login");
+      // }
+      if (response.status === 200) {
         if (role === "customer") {
-          navigate("/customer");
+          alert("Signup successful as customer");
+          navigate("/login");
         } else if (role === "trainer") {
-          navigate("/trainer");
+          alert("Signup successful as customer");
+          navigate("/login");
         }
       } else {
         // Handle signup error
+        console.log(response);
         console.error("Signup failed:", response.data.message);
       }
     } catch (error) {
@@ -159,9 +166,10 @@ const SignUp = () => {
                 ),
               }}
               InputLabelProps={{
-                style: { color: "#white" },
+                style: { color: "white" },
               }}
               style={{
+                color: "white",
                 backgroundColor: "rgba(0,0,0,0.5)",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {

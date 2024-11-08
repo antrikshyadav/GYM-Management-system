@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const admin = require("firebase-admin");
 const credentials = require("./key.json");
 
@@ -7,6 +8,7 @@ admin.initializeApp({
   credential: admin.credential.cert(credentials),
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const db = admin.firestore();
@@ -20,8 +22,8 @@ app.post("/create", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     };
-    const user = await db.collection("users").doc(id).set(userJson);
-    res.send(user);
+    const user = await db.collection("gymusers").doc(id).set(userJson);
+    res.send(console.log(user));
   } catch (error) {
     res.send(error);
   }

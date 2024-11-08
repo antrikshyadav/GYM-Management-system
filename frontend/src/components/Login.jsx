@@ -25,16 +25,16 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/login", {
+      const response = await axios.post("http://localhost:8080/read", {
         role,
         email,
         password,
       });
       if (response.data.success) {
         if (role === "customer") {
-          navigate("/customer");
+          navigate("/");
         } else if (role === "trainer") {
-          navigate("/trainer");
+          navigate("/");
         }
       } else {
         // Handle login error
@@ -146,6 +146,8 @@ const Login = () => {
 
             <TextField
               fullWidth
+              color="white"
+              placeholder="Enter your email"
               label="Email"
               variant="outlined"
               type="email"
@@ -154,13 +156,14 @@ const Login = () => {
               required
               InputProps={{
                 startAdornment: (
-                  <Mail style={{ color: "#A9A9A9", marginRight: "8px" }} />
+                  <Mail style={{ color: "white", marginRight: "8px" }} />
                 ),
               }}
               InputLabelProps={{
-                style: { color: "#A9A9A9" },
+                style: { color: "white" },
               }}
               style={{
+                color: "white",
                 backgroundColor: "rgba(0,0,0,0.5)",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
@@ -239,7 +242,7 @@ const Login = () => {
                 Forgot password?
               </a>
               <a
-                href="#"
+                href="/signup"
                 style={{
                   color: "#DC143C",
                   textDecoration: "none",
