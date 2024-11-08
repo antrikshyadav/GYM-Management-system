@@ -1,7 +1,16 @@
+// // Add these imports at the top with your other imports
+// import Dialog from '@mui/material/Dialog';
+// import DialogTitle from '@mui/material/DialogTitle';
+// import DialogContent from '@mui/material/DialogContent';
+// import DialogActions from '@mui/material/DialogActions';
+// import IconButton from '@mui/material/IconButton';
+// import CloseIcon from '@mui/icons-material/Close';
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import backgroundImage from './background-image.jpg';
 import trainer from './trainer.jpg'
+import BMICalculator from "./BMICalculator";
 import {
   AppBar,
   Box,
@@ -9,7 +18,7 @@ import {
   Card,
   Container,
   Grid,
-  IconButton,
+   IconButton,
   TextField,
   Toolbar,
   Typography,
@@ -27,6 +36,9 @@ import {
   Twitter,
 } from "@mui/icons-material";
 
+
+// Add this right after your existing imports and before the LandingPage component
+
 const LandingPage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -40,6 +52,7 @@ const LandingPage = () => {
             QUEST DIGIFLEX
           </Typography>
           <Box sx={{ display: "flex", gap: 2 }}>
+             <BMICalculator /> {/* Add this line */}
             <Button
               variant="outlined"
               sx={{
